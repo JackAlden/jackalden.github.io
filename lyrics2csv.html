@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<style>
+div{
+  font-size: 1.5em;
+}
+
+textarea {
+ font-size: 1.7em;
+ font-family: Arial;
+ background-color: #262626;
+ color: white;
+}
+
+body {color: white;}
+
+
+
+</style>
+</head>
+<body style="background-color: #262626;">
+
+<center>
+	
+	<div><b>下に歌詞をペーストしてください</b></div>
+	<textarea id="lyricsTextArea" rows="15" cols="40">踊ってるだけで退場
+それをそっかそっかっていって</textarea><br>
+
+	<input type="button" value="Add" onclick="addWordAndSentence();" />
+</center>
+
+
+<script>
+function addWordAndSentence()
+{ 
+	//get selected word
+	var getLyricsTextArea = document.getElementById('lyricsTextArea');
+	var wordSelection = getLyricsTextArea.value.substring(getLyricsTextArea.selectionStart, getLyricsTextArea.selectionEnd);
+	
+	//get current line
+	var lines = getLyricsTextArea.value.split('\n');
+	var findLineNumber = getLyricsTextArea.value.substring(0, getLyricsTextArea.selectionStart).split("\n");
+	var currentLineNumber = findLineNumber.length;
+	var currentLine = lines[currentLineNumber-1];
+	
+	console.log(wordSelection)
+	console.log(currentLine)
+	
+	//append selected word and line an array
+}
+</script>
+
+</body>
+</html>
