@@ -1,0 +1,25 @@
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  font-size: 1.3em;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+div{
+  font-size: 1.5em;
+}
+
+textarea {
+ font-size: 1.7em;
+ font-family: Arial;
+ background-color: #262626;
+ color: white;
+}
+
+body {
+	color: white;
+}

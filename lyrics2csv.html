@@ -1,86 +1,19 @@
 <!doctype html>
 <html>
 <head>
-<style>
-
-table, th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-  font-size: 1.3em;
-}
-
-th, td {
-  padding: 5px;
-  text-align: left;
-}
-
-div{
-  font-size: 1.5em;
-}
-
-textarea {
- font-size: 1.7em;
- font-family: Arial;
- background-color: #262626;
- color: white;
-}
-
-body {color: white;}
-</style>
-
+	<title>Lyrics2csv</title>
+	<link rel="stylesheet" href="lyrics2csv.css" type="text/css">
 </head>
+
 <body style="background-color: #262626;">
-
-
-<center>
+	<center>
 	<div><b>下に歌詞をペーストしてください</b></div>
 	<textarea id="lyricsTextArea" rows="6" cols="50" onmouseup="addWordAndSentence();"></textarea><br>
 	<input type="button" value="Add" onclick="addWordAndSentence();" />
-	<input type="button" value="Clear" onclick="popArray();" /></br></br>
+	<input type="button" value="Clear Last" onclick="popArray();" /></br></br>
 	<table id="wordList"></table>
-</center>
+	</center>
 
-<script>
-var myStringArray = [];
-var table = "";
-
-function addWordAndSentence(){ 
-	//get selected word
-	var lyricsTextArea = document.getElementById('lyricsTextArea');
-	var wordSelection = lyricsTextArea.value.substring(lyricsTextArea.selectionStart, lyricsTextArea.selectionEnd);
-	
-	//get current line
-	var lines = lyricsTextArea.value.split('\n');
-	var findLineNumber = lyricsTextArea.value.substring(0, lyricsTextArea.selectionStart).split("\n");
-	var currentLineNumber = findLineNumber.length;
-	var currentLine = lines[currentLineNumber-1];
-
-	myStringArray.push(wordSelection, currentLine);
-	outputTable();
-}
-
-function popArray(){
-	myStringArray.pop();
-	myStringArray.pop();
-	outputTable();
-}
-
-function outputTable(){
-
-	table = "";
-    for (var i = 0; i < myStringArray.length; i++) {
-    	if(i % 2 === 0){
-    		table += "<tr><td>" + myStringArray[i] + "</td>";
-    	}
-    	else{
-
-    		table += "<td>" + myStringArray[i] + "</td></tr>";
-    	}
-    }
-    console.log(table)
-    document.getElementById('wordList').innerHTML = table;
-}
-</script>
-
+	<script src="lyrics2csv.js"></script>
 </body>
 </html>
