@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en-gb">
 <head>
+	<meta charset="utf-8" />
 	<title>Lyrics2csv</title>
 	<link rel="stylesheet" href="lyrics2csv.css" type="text/css">
 </head>
@@ -10,7 +11,8 @@
 	<div><b>下に歌詞をペーストしてください</b></div>
 	<textarea id="lyricsTextArea" rows="6" cols="50" onmouseup="addWordAndSentence();"></textarea><br>
 	<input type="button" value="Add" onclick="addWordAndSentence();" />
-	<input type="button" value="Clear Last" onclick="popArray();" /></br></br>
+	<input type="button" value="Clear Last" onclick="popArray();" />
+	<input type="button" value="getCSV" onclick="getCSV();" /></br></br>
 	<table id="wordList"></table>
 	</center>
 
